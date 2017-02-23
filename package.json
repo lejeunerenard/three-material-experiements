@@ -1,0 +1,67 @@
+{
+  "name": "three-material",
+  "version": "1.0.0",
+  "description": "A threejs material experiment",
+  "main": "index.js",
+  "dependencies": {
+    "canvas-fit-loop": "^1.0.3",
+    "glsl-noise": "0.0.0",
+    "glslify-hex": "^2.1.1",
+    "glslify-import": "^3.0.0",
+    "object-assign": "",
+    "three": "",
+    "three-orbit-controls": "^82.1.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "",
+    "babelify": "",
+    "browserify": "",
+    "budo": "",
+    "glslify": "^6.0.1",
+    "installify": "",
+    "snazzy": "^6.0.0",
+    "standard": ""
+  },
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "standard | snazzy",
+    "dev": "budo index.js:bundle.js --live --open",
+    "start": "npm run dev",
+    "build:prod": "browserify . -o bundle.js"
+  },
+  "keywords": [
+    "3d",
+    "experiment",
+    "materials",
+    "shader",
+    "noise"
+  ],
+  "author": "Sean Zellmer <sean@lejeunerenard.com> (http://lejeunerenard.com)",
+  "license": "MIT",
+  "browserify": {
+    "transform": [
+      "babelify",
+      "glslify",
+      [
+        "installify",
+        {
+          "save": true
+        }
+      ]
+    ]
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "glslify": {
+    "transform": [
+      "glslify-import",
+      "glslify-hex"
+    ]
+  },
+  "standard": {
+    "globals": ["performance"]
+  }
+}
