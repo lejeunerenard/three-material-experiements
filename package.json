@@ -13,6 +13,7 @@
     "three-orbit-controls": "^82.1.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-preset-es2015": "",
     "babelify": "",
     "browserify": "",
@@ -62,6 +63,8 @@
     ]
   },
   "standard": {
-    "globals": ["performance"]
+    "globals": [
+      "performance"
+    ]
   }
 }
